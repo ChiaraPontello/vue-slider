@@ -1,6 +1,6 @@
-//Vue.
 const {createApp} = Vue
 createApp({
+// contiene tutti i dati / le variabili 
 data(){
     return {
         slides: [
@@ -33,8 +33,23 @@ data(){
         activeIndex: 0,
     }
 },
-//metodi per il carosello.
+// contiene le funzioni e i metodi
 methods: {
+    doSlide(){
+        if(this.activeIndex === this.slides.length -1){
+            this.activeIndex = 0;
+        } else {
+            this.activeIndex += 1;
+        }
+    },
+    avSlide(){
+        if(this.activeIndex === 0){
+            this.activeIndex = this.slides.length -1;
+        } else {
+            this.activeIndex -= 1;
+        }
+    },
+},    
+}).mount('#app')   
 
-}
-}).mount('#app');
+
