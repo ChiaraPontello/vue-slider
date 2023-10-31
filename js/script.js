@@ -31,6 +31,7 @@ data(){
             }
         ],
         activeIndex: 0,
+        interval: null
     }
 },
 //metodi carosello.
@@ -52,7 +53,10 @@ methods: {
     selectSlide(i){
         this.activeIndex = i;
     }
-},    
+},
+mounted(){
+    this.interval = setInterval(this.doSlide,1000);
+}    
 }).mount('#app')   
 
 
