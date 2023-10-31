@@ -49,6 +49,9 @@ methods: {
             this.activeIndex -= 1;
         }
     },
+    selectSlide(i){
+        this.activeIndex = i;
+    }
 },    
 }).mount('#app')   
 
