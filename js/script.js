@@ -52,10 +52,16 @@ methods: {
     },
     selectSlide(i){
         this.activeIndex = i;
+    },
+    startAutoplay(){
+        this.interval = setInterval(this.doSlide,1000);
+    },
+    stopAutoplay(){
+        clearInterval(this.interval);
     }
 },
 mounted(){
-    this.interval = setInterval(this.doSlide,1000);
+    this.startAutoplay();
 }    
 }).mount('#app')   
 
