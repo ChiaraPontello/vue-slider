@@ -14,7 +14,13 @@
     <div id="app">
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0" @mouseover = "stopAutoplay" @mouseleave = "startAutoplay">
+            <div class="slider-wrapper" tabindex="0" 
+            @mouseover = "stopAutoplay" 
+            @mouseleave = "startAutoplay" 
+            @focus = "stopAutoplay" 
+            @blur = "startAutoplay" 
+            @keyup.up = "doSlide" 
+            @keyup.down = "avSlide">
 
                 <div class="item" :v-for>
                     <img :src="slides[activeIndex].image" :alt="slides[activeIndex].title">
